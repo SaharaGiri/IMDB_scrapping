@@ -1,0 +1,56 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>IMDB scrapping with Python</title>   
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='StyleSheet1.css') }}">
+    <link rel="stylesheet" type="text/css" href={{"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"}}>
+    <style>
+       body {
+    background-color: #312727;
+    font-family: roboto,Helvetica,Arial,sans-serif;
+}
+
+.nav {
+    background-color: black;
+}
+
+.searchBox {
+    width: 60%;
+    height: 30px;
+}
+
+.searchBar {
+    text-align: center;
+}
+
+.submitBtn {
+    width: 15%;
+    height: 45px;
+    cursor: pointer;
+    color: #f5c518;
+    font-size: 25px;
+    background-color: black;
+    text-align: center;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+    </style>
+</head>
+<body>
+   <div class="nav">
+        <img src="{{url_for('static', filename='imdb.PNG')}}" style="width:100px; height:50px"/>
+        <h1 style="color:#f5c518; text-align:center">IMDB Scrapping</h1>
+    </div>   
+       <div class="searchBar">
+        <form  action="{{url_for('search',count=count)}}"  method="post" >
+            <label for="searchBar" style="color:#f5c518; text-align:center;"><strong>Please the Enter the Number of Movies you like to search for:</strong></label>
+            <br>
+            <input type="text"  name="mNumber" id="count"  class="searchBox"/>                      
+            <br>
+            <input type="submit" value="Search" class="SubmitBtn" />
+        </form> 
+        </div>
+</body>
+</html>
